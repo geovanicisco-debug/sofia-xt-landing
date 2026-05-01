@@ -15,7 +15,7 @@ export function Materias() {
   const [active, setActive] = useState("Primaria");
 
   return (
-    <section className="py-20 md:py-28 bg-surface">
+    <section className="py-12 md:py-16 bg-surface">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-orange">

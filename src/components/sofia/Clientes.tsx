@@ -45,7 +45,7 @@ function Row({ speed, reverse = false }: { speed: "marquee" | "marquee-slow"; re
 
 export function Clientes() {
   return (
-    <section id="clientes" className="py-20 md:py-24 bg-background border-y border-border">
+    <section id="clientes" className="py-12 md:py-14 bg-background border-y border-border">
       <div className="max-w-7xl mx-auto px-4 md:px-8 text-center mb-12">
         <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-teal">
           Confianza institucional

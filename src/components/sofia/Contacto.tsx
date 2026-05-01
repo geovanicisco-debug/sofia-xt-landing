@@ -68,7 +68,7 @@ export function Contacto() {
     errors[k] ? "border-destructive" : "border-border";
 
   return (
-    <section id="contacto" className="py-20 md:py-28 contact-gradient">
+    <section id="contacto" className="py-12 md:py-16 contact-gradient">
       <div className="max-w-7xl mx-auto px-4 md:px-8 grid lg:grid-cols-2 gap-12 items-start">
         <div>
           <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-orange">

@@ -1,5 +1,19 @@
 import { useEffect, useRef, useState } from "react";
 
+import copaCnep      from "@/assets/copa/cnep.jpg";
+import copaDinisa    from "@/assets/copa/dinisa.jpg";
+import copaExpreso   from "@/assets/copa/expreso.png";
+import copaMeduca    from "@/assets/copa/sofia-meduca.jpg";
+import copaTetakawi  from "@/assets/copa/tetakawi.jpg";
+
+const copaSponsors = [
+  { src: copaCnep,     alt: "CNEP" },
+  { src: copaDinisa,   alt: "Dinisa" },
+  { src: copaExpreso,  alt: "Expreso" },
+  { src: copaMeduca,   alt: "Sofía XT Meduca" },
+  { src: copaTetakawi, alt: "Tetakawi" },
+];
+
 const categories = [
   {
     label: "Eventos",
@@ -74,7 +88,7 @@ export function Videos() {
   const next = () => selectVideo((idx + 1) % videos.length);
 
   return (
-    <section id="videos" className="py-20 md:py-28 bg-ink text-white">
+    <section id="videos" className="py-12 md:py-16 bg-ink text-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center mb-10">
           <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-orange">
@@ -202,6 +216,30 @@ export function Videos() {
             ))}
           </div>
         </div>
+
+        {/* Copa Nacional sponsors — only shown on Eventos tab */}
+        {cat === 0 && (
+          <div className="mt-10 border-t border-white/10 pt-8">
+            <p className="text-center text-xs font-bold uppercase tracking-wider text-white/40 mb-6">
+              Agradecemos a nuestros patrocinadores · 8va Copa Nacional
+            </p>
+            <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10">
+              {copaSponsors.map((s) => (
+                <div
+                  key={s.alt}
+                  className="bg-white rounded-xl px-4 py-3 flex items-center justify-center h-24 w-44 shadow"
+                >
+                  <img
+                    src={s.src}
+                    alt={s.alt}
+                    className="max-h-full max-w-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
       </div>
     </section>
   );

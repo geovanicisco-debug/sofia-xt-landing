@@ -24,7 +24,7 @@ function Counter({ end, suffix = "", prefix = "+" }: { end: number; suffix?: str
           }
         });
       },
-      { threshold: 0.4 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
     obs.observe(ref.current);
     return () => obs.disconnect();
@@ -48,7 +48,7 @@ const items = [
 export function Stats() {
   return (
     <section className="bg-brand-green text-white">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 py-14 md:py-20 grid md:grid-cols-3 gap-10 text-center">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-10 md:py-12 grid md:grid-cols-3 gap-10 text-center">
         {items.map((it) => (
           <div key={it.label} className="flex flex-col items-center">
             <div className="text-4xl mb-3">{it.icon}</div>

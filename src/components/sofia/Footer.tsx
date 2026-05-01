@@ -1,4 +1,13 @@
 import logo from "@/assets/sofia-logo.png";
+import aliConacyt   from "@/assets/aliados/conacyt.png";
+import aliUnete     from "@/assets/aliados/unete.png";
+import aliMicrosoft from "@/assets/aliados/microsoft.png";
+
+const aliados = [
+  { src: aliConacyt,   alt: "CONACYT" },
+  { src: aliUnete,     alt: "UNETE" },
+  { src: aliMicrosoft, alt: "Microsoft" },
+];
 
 const navLinks = [
   { href: "#que-es", label: "¿Qué es Sofía XT?" },
@@ -19,6 +28,21 @@ const socials = [
 export function Footer() {
   return (
     <footer className="bg-ink text-white border-t-4 border-brand-green">
+
+      {/* Aliados strip */}
+      <div className="border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 py-8 flex flex-wrap justify-center items-center gap-8 md:gap-14">
+          {aliados.map((a) => (
+            <img
+              key={a.alt}
+              src={a.src}
+              alt={a.alt}
+              className="h-20 md:h-22 w-auto object-contain opacity-85 hover:opacity-100 transition-opacity"
+            />
+          ))}
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-14 grid md:grid-cols-3 gap-10">
         <div>
           <div className="bg-white inline-block rounded-xl p-3">

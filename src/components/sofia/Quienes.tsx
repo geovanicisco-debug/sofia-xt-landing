@@ -28,7 +28,7 @@ const milestones = [
 
 export function Quienes() {
   return (
-    <section id="quienes" className="py-20 md:py-28 bg-background">
+    <section id="quienes" className="py-12 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-green">

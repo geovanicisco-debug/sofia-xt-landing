@@ -58,7 +58,7 @@ const browsers = [
 
 export function Plataformas() {
   return (
-    <section className="py-16 md:py-20 bg-surface border-y border-border">
+    <section className="py-10 md:py-12 bg-surface border-y border-border">
       <div className="max-w-5xl mx-auto px-4 md:px-8 text-center">
         <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-blue">
           Compatibilidad

@@ -67,7 +67,7 @@ export function Testimonios() {
   const t = testimonials[active];
 
   return (
-    <section className="py-20 md:py-28 bg-surface">
+    <section className="py-12 md:py-16 bg-surface">
       <div className="max-w-4xl mx-auto px-4 md:px-8 text-center">
         <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-teal">
           Lo que dicen los maestros
