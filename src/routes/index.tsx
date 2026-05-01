@@ -5,9 +5,13 @@ import { Hero } from "@/components/sofia/Hero";
 import { Stats } from "@/components/sofia/Stats";
 import { QueEs } from "@/components/sofia/QueEs";
 import { Materias } from "@/components/sofia/Materias";
+import { Novedades } from "@/components/sofia/Novedades";
+import { Videos } from "@/components/sofia/Videos";
 import { Quienes } from "@/components/sofia/Quienes";
 import { Equipo } from "@/components/sofia/Equipo";
+import { Testimonios } from "@/components/sofia/Testimonios";
 import { Clientes } from "@/components/sofia/Clientes";
+import { Plataformas } from "@/components/sofia/Plataformas";
 import { Contacto } from "@/components/sofia/Contacto";
 import { Footer } from "@/components/sofia/Footer";
 
@@ -39,10 +43,14 @@ function Index() {
       <Hero />
       <Stats />
       <QueEs />
-      <Materias />
       <Quienes />
+      <Materias />
+      <Novedades />
       <Equipo />
+      <Testimonios />
       <Clientes />
+      <Plataformas />
+      <Videos />
       <Contacto />
       <Footer />
       <Toaster richColors position="top-right" />

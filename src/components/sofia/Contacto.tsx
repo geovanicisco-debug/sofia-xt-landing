@@ -108,7 +108,7 @@ export function Contacto() {
             {errors.nombre && <p className="text-xs text-destructive mt-1">{errors.nombre}</p>}
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
+          <div className="grid xs:grid-cols-2 sm:grid-cols-2 gap-4">
             <div>
               <label className="text-sm font-bold text-ink">Correo electrónico</label>
               <input name="email" type="email" maxLength={255} className={`${inputBase} ${errCls("email")} mt-1.5`} placeholder="tucorreo@escuela.mx" />

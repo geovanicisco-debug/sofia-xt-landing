@@ -60,15 +60,16 @@ export function Quienes() {
             11 años de historia
           </h3>
           <div className="relative">
-            <div className="hidden md:block absolute left-0 right-0 top-1/2 h-0.5 bg-border" />
+            {/* Line sits at center of the dot (dot is 24px + ring 8px = 32px, center = 16px = top-4) */}
+            <div className="hidden md:block absolute left-0 right-0 top-4 h-0.5 bg-border" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {milestones.map((m) => (
                 <div key={m.year} className="relative flex flex-col items-center text-center">
                   <div
-                    className="w-6 h-6 rounded-full ring-4 ring-background z-10"
+                    className="w-6 h-6 rounded-full ring-4 ring-background z-10 mb-4"
                     style={{ background: m.color }}
                   />
-                  <div className="mt-4 text-2xl font-black text-ink">{m.year}</div>
+                  <div className="text-2xl font-black text-ink">{m.year}</div>
                   <div className="mt-1 text-sm text-ink-soft max-w-[180px]">{m.text}</div>
                 </div>
               ))}

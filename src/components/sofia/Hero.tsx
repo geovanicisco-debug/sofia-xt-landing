@@ -20,7 +20,7 @@ export function Hero() {
             <span className="w-2 h-2 rounded-full bg-brand-green-soft" />
             11 años transformando la educación
           </span>
-          <h1 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+          <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
             La plataforma educativa más popular de{" "}
             <span className="text-brand-orange">México</span>
           </h1>
