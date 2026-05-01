@@ -1,26 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar } from "@/components/sofia/Navbar";
+import { Hero } from "@/components/sofia/Hero";
+import { Stats } from "@/components/sofia/Stats";
+import { QueEs } from "@/components/sofia/QueEs";
+import { Materias } from "@/components/sofia/Materias";
+import { Quienes } from "@/components/sofia/Quienes";
+import { Equipo } from "@/components/sofia/Equipo";
+import { Clientes } from "@/components/sofia/Clientes";
+import { Contacto } from "@/components/sofia/Contacto";
+import { Footer } from "@/components/sofia/Footer";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Sofía XT — La plataforma educativa más popular de México" },
+      {
+        name: "description",
+        content:
+          "Plataforma educativa adaptativa para preescolar a preparatoria. Más de 6,000 escuelas, 22,000 grupos y 30M de ejercicios resueltos. Alineada al programa SEP.",
+      },
+      { property: "og:title", content: "Sofía XT — Plataforma educativa adaptativa" },
+      {
+        property: "og:description",
+        content:
+          "Matemáticas, Español, Ciencias, Sociales e Inglés para 12 grados escolares. Solicita una demo.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
-
 function Index() {
-  return <PlaceholderIndex />;
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <Stats />
+      <QueEs />
+      <Materias />
+      <Quienes />
+      <Equipo />
+      <Clientes />
+      <Contacto />
+      <Footer />
+      <Toaster richColors position="top-right" />
+    </main>
+  );
 }
