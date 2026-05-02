@@ -14,6 +14,7 @@ import { Clientes } from "@/components/sofia/Clientes";
 import { Plataformas } from "@/components/sofia/Plataformas";
 import { Contacto } from "@/components/sofia/Contacto";
 import { Footer } from "@/components/sofia/Footer";
+import { SoporteFloat } from "@/components/sofia/SoporteFloat";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,6 +54,7 @@ function Index() {
       <Videos />
       <Contacto />
       <Footer />
+      <SoporteFloat />
       <Toaster richColors position="top-right" />
     </main>
   );

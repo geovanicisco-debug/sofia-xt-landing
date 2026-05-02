@@ -3,6 +3,8 @@ import logo from "@/assets/sofia-logo.png";
 
 const LOGIN_URL = "https://alumnos.sofiaxt.com";
 
+const SOPORTE_URL = "https://support.sofiaxt.com/support/tickets/new";
+
 const links = [
   { href: "#que-es", label: "¿Qué es Sofía XT?" },
   { href: "#quienes", label: "Quiénes Somos" },
@@ -181,6 +183,19 @@ export function Navbar() {
           </div>
 
           <a
+            href={SOPORTE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:inline-flex items-center gap-1.5 text-sm font-semibold text-ink hover:text-brand-teal transition-colors px-3 py-2 rounded-lg hover:bg-surface"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 18v-6a9 9 0 0118 0v6"/>
+              <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3v5z"/>
+              <path d="M3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3v5z"/>
+            </svg>
+            Soporte
+          </a>
+          <a
             href="#contacto"
             className="hidden sm:inline-flex items-center gap-2 rounded-full bg-brand-orange px-4 md:px-5 py-2.5 text-sm font-bold text-white glow-orange transition-transform hover:scale-105"
           >
@@ -227,6 +242,18 @@ export function Navbar() {
                 className="block px-3 py-2 rounded-md text-ink font-semibold hover:bg-surface"
               >
                 Iniciar Sesión
+              </a>
+            </li>
+            <li>
+              <a
+                href={SOPORTE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="block px-3 py-2 rounded-md font-semibold hover:bg-surface"
+                style={{ color: "var(--brand-teal)" }}
+              >
+                Soporte
               </a>
             </li>
             <li className="pt-2">

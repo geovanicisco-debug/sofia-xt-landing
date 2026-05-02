@@ -28,7 +28,7 @@ const soporte = [
   { estado: "Sonora",          tel: "662 229 0291", email: "soporte.c19@sofiaxt.com",    color: "var(--brand-blue)" },
   { estado: "Guanajuato",      tel: "477 671 1813", email: "soportegto.c19@sofiaxt.com", color: "var(--brand-green)" },
   { estado: "Baja California", tel: "686 603 4133", email: "soportebc@sofiaxt.com",      color: "var(--brand-teal)" },
-  { estado: "San Luis Potosí", tel: "662 104 7564", email: "mara.lugo@sofiaxt.com",      color: "var(--brand-skyblue)" },
+  { estado: "San Luis Potosí", tel: "662 104 7564", email: "mara.lugo@sofiaxt.com",      color: "var(--brand-pink)" },
   { estado: "Chihuahua",       tel: "662 155 0952", email: null,                          color: "var(--brand-orange)" },
 ];
 

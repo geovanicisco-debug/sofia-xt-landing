@@ -15,6 +15,7 @@ const navLinks = [
   { href: "#equipo", label: "Equipo" },
   { href: "#clientes", label: "Clientes" },
   { href: "#contacto", label: "Contacto" },
+  { href: "https://support.sofiaxt.com/support/tickets/new", label: "Soporte", external: true },
 ];
 
 const socials = [
@@ -58,7 +59,11 @@ export function Footer() {
           <ul className="space-y-2">
             {navLinks.map((l) => (
               <li key={l.href}>
-                <a href={l.href} className="text-white/80 hover:text-brand-green-soft text-sm transition-colors">
+                <a
+                  href={l.href}
+                  {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                  className="text-white/80 hover:text-brand-green-soft text-sm transition-colors"
+                >
                   {l.label}
                 </a>
               </li>
