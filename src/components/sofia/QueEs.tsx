@@ -1,4 +1,7 @@
 import about from "@/assets/equipo-foto.jpg";
+import imgAlumnos from "@/assets/alumnos.jpg";
+import imgMaestros from "@/assets/maestros.jpg";
+import imgPadres from "@/assets/padres2.jpg";
 
 const cards = [
   {
@@ -6,18 +9,22 @@ const cards = [
     title: "Para Alumnos",
     desc: "Practica ejercicios de forma personalizada y divertida, con retroalimentación inmediata.",
     color: "var(--brand-blue)",
+    img: imgAlumnos,
   },
   {
     icon: "👩‍🏫",
     title: "Para Profesores",
     desc: "Registra tareas, exámenes y da seguimiento al avance de cada grupo y alumno.",
     color: "var(--brand-green)",
+    img: imgMaestros,
   },
   {
     icon: "👨‍👩‍👧",
     title: "Para Padres",
     desc: "Monitorea el progreso de tus hijos en tiempo real y participa en su aprendizaje.",
     color: "var(--brand-orange)",
+    img: imgPadres,
+    imgPosition: "object-bottom",
   },
 ];
 
@@ -57,15 +64,24 @@ export function QueEs() {
           {cards.map((c) => (
             <div
               key={c.title}
-              className="card-lift bg-card rounded-2xl p-7 shadow-sm border border-border relative overflow-hidden"
+              className="card-lift bg-card rounded-2xl shadow-sm border border-border relative overflow-hidden"
             >
               <div
                 className="absolute top-0 inset-x-0 h-1.5"
                 style={{ background: c.color }}
               />
-              <div className="text-4xl mb-4">{c.icon}</div>
-              <h3 className="text-xl font-black text-ink">{c.title}</h3>
-              <p className="mt-2 text-ink-soft leading-relaxed">{c.desc}</p>
+              <div className="w-full h-48 overflow-hidden">
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  className={`w-full h-full object-cover ${c.imgPosition ?? "object-center"}`}
+                />
+              </div>
+              <div className="p-7">
+                <div className="text-4xl mb-4">{c.icon}</div>
+                <h3 className="text-xl font-black text-ink">{c.title}</h3>
+                <p className="mt-2 text-ink-soft leading-relaxed">{c.desc}</p>
+              </div>
             </div>
           ))}
         </div>
