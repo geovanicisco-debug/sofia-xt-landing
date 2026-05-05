@@ -1,4 +1,4 @@
-import about from "@/assets/about-illustration.png";
+import about from "@/assets/equipo-foto.jpg";
 
 const cards = [
   {
@@ -44,7 +44,7 @@ export function QueEs() {
             <div className="absolute -inset-4 bg-brand-blue/10 rounded-3xl rotate-2" />
             <img
               src={about}
-              alt="Estudiantes aprendiendo con Sofía XT"
+              alt="Equipo Sofía XT"
               loading="lazy"
               width={1024}
               height={896}

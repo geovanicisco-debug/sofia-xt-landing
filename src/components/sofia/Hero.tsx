@@ -1,5 +1,3 @@
-import heroImg from "@/assets/hero-mockup.png";
-
 export function Hero() {
   return (
     <section id="top" className="relative pt-16 md:pt-20 hero-gradient overflow-hidden">
@@ -46,13 +44,19 @@ export function Hero() {
 
         <div className="relative">
           <div className="absolute -inset-6 bg-white/10 blur-3xl rounded-full" />
-          <img
-            src={heroImg}
-            alt="Plataforma Sofía XT en laptop y tablet"
-            width={1024}
-            height={896}
-            className="relative w-full h-auto drop-shadow-2xl"
-          />
+          <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/qPE0qPmyXfU?si=IVOWniRrpWcCIIrd"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              className="w-full h-full"
+            />
+          </div>
         </div>
       </div>
     </section>
