@@ -1,27 +1,12 @@
-const directives = [
-  {
-    area: "Sofía XT Oficial",
-    color: "var(--brand-blue)",
-    members: [
-      { name: "Dr. Dino A. Pardo", role: "Dirección General", initials: "DP" },
-    ],
-  },
-  {
-    area: "Escuelas Públicas",
-    color: "var(--brand-green)",
-    members: [
-      { name: "Lic. Cristina Soberanes", role: "Dirección", initials: "CS" },
-      { name: "María Laura Lugo", role: "Coordinación", initials: "ML" },
-    ],
-  },
-  {
-    area: "Escuelas Privadas",
-    color: "var(--brand-orange)",
-    members: [
-      { name: "Lic. Mavira Durán P.", role: "Dirección", initials: "MD" },
-      { name: "Lic. Martha Briseño V.", role: "Coord. Región Noroeste", initials: "MB" },
-    ],
-  },
+const members = [
+  { name: "Dr. Dino A. Pardo",       role: "Dirección General",            initials: "DP", color: "var(--brand-blue)" },
+  { name: "Lic. Cristina Soberanes", role: "Dirección",                    initials: "CS", color: "var(--brand-green)" },
+  { name: "María Laura Lugo",        role: "Coordinación",                 initials: "ML", color: "var(--brand-teal)" },
+  { name: "Lic. Mavira Durán P.",    role: "Dirección",                    initials: "MD", color: "var(--brand-orange)" },
+  { name: "Lic. Martha Briseño V.",  role: "Coord. Región Noroeste",       initials: "MB", color: "var(--brand-pink)" },
+  { name: "Martha Peralta",          role: "Dirección de Vinculación",     initials: "MP", color: "var(--brand-cyan)" },
+  { name: "Eduardo Mejia",           role: "Backend Programmer",           initials: "EM", color: "var(--brand-skyblue)" },
+  { name: "Guillermo",               role: "Director de Desarrollo",       initials: "G",  color: "var(--brand-amber)" },
 ];
 
 const soporte = [
@@ -52,31 +37,23 @@ export function Equipo() {
 
         {/* Directivos */}
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {directives.map((d) =>
-            d.members.map((m) => (
+          {members.map((m) => (
+            <div
+              key={m.name}
+              className="card-lift bg-card rounded-2xl p-6 border border-border shadow-sm flex items-start gap-4"
+            >
               <div
-                key={m.name}
-                className="card-lift bg-card rounded-2xl p-6 border border-border shadow-sm flex items-start gap-4"
+                className="shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-white font-black text-lg"
+                style={{ background: m.color }}
               >
-                <div
-                  className="shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-white font-black text-lg"
-                  style={{ background: d.color }}
-                >
-                  {m.initials}
-                </div>
-                <div>
-                  <div
-                    className="text-[10px] font-bold uppercase tracking-wider mb-0.5"
-                    style={{ color: d.color }}
-                  >
-                    {d.area}
-                  </div>
-                  <div className="text-base font-black text-ink">{m.name}</div>
-                  <div className="text-sm font-semibold text-ink-soft">{m.role}</div>
-                </div>
+                {m.initials}
               </div>
-            ))
-          )}
+              <div>
+                <div className="text-base font-black text-ink">{m.name}</div>
+                <div className="text-sm font-semibold text-ink-soft">{m.role}</div>
+              </div>
+            </div>
+          ))}
         </div>
 
         {/* Soporte técnico */}

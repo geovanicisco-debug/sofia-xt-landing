@@ -128,7 +128,7 @@ export function Clientes() {
           Confianza institucional
         </span>
         <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black text-ink">
-          +40 Escuelas que confían en nosotros
+          +40 Escuelas que han confiado en nosotros
         </h2>
       </div>
 

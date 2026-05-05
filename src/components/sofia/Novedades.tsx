@@ -8,6 +8,10 @@ const features = [
   { icon: "📊", title: "Encuestas", desc: "Responde encuestas sobre gustos, inteligencias múltiples, autoestima y más.", color: "var(--brand-green)" },
   { icon: "📝", title: "Tareas", desc: "Realiza las actividades y tareas asignadas por tus maestros de manera sencilla.", color: "var(--brand-cyan)" },
   { icon: "🔬", title: "Diagnóstico", desc: "Pon a prueba tus conocimientos con los exámenes diagnóstico de Sofía XT.", color: "var(--brand-blue)" },
+  { icon: "📐", title: "Math Practice", desc: "Interfaces de entrenamiento matemático para primaria, secundaria y preparatoria.", color: "var(--brand-skyblue)" },
+  { icon: "🎓", title: "Preparación Prepa", desc: "Módulo especial que prepara a los alumnos para ingresar exitosamente a preparatoria.", color: "var(--brand-teal)" },
+  { icon: "🏛️", title: "Entrenamiento Tec de Monterrey", desc: "Practica y refuerza los conocimientos necesarios para el examen de admisión del Tecnológico de Monterrey.", color: "var(--brand-green)" },
+  { icon: "📖", title: "Programa NEM", desc: "Contenido alineado al programa Nueva Escuela Mexicana (NEM) para todos los niveles.", color: "var(--brand-orange)" },
 ];
 
 export function Novedades() {
