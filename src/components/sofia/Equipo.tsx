@@ -1,12 +1,17 @@
+import dinoPardo      from "@/assets/team/dino-pardo.jpg";
+import cristinaSob    from "@/assets/team/cristina-soberanes.jpg";
+import marthaBriceno  from "@/assets/team/martha-briceno.jpg";
+import maviraDuran    from "@/assets/team/mavira-duran.jpg";
+
 const members = [
-  { name: "Dr. Dino A. Pardo",       role: "Dirección General",            initials: "DP", color: "var(--brand-blue)" },
-  { name: "Lic. Cristina Soberanes", role: "Dirección",                    initials: "CS", color: "var(--brand-green)" },
-  { name: "María Laura Lugo",        role: "Coordinación",                 initials: "ML", color: "var(--brand-teal)" },
-  { name: "Lic. Mavira Durán P.",    role: "Dirección",                    initials: "MD", color: "var(--brand-orange)" },
-  { name: "Lic. Martha Briseño V.",  role: "Coord. Región Noroeste",       initials: "MB", color: "var(--brand-pink)" },
-  { name: "Martha Peralta",          role: "Dirección de Vinculación",     initials: "MP", color: "var(--brand-cyan)" },
-  { name: "Eduardo Mejia",           role: "Backend Programmer",           initials: "EM", color: "var(--brand-skyblue)" },
-  { name: "Guillermo",               role: "Director de Desarrollo",       initials: "G",  color: "var(--brand-amber)" },
+  { name: "Dr. Dino A. Pardo",       role: "Dirección General",            initials: "DP", color: "var(--brand-blue)",     photo: dinoPardo },
+  { name: "Lic. Cristina Soberanes", role: "Dirección",                    initials: "CS", color: "var(--brand-green)",    photo: cristinaSob },
+  { name: "María Laura Lugo",        role: "Coordinación",                 initials: "ML", color: "var(--brand-teal)",     photo: null },
+  { name: "Lic. Mavira Durán P.",    role: "Dirección",                    initials: "MD", color: "var(--brand-orange)",   photo: maviraDuran },
+  { name: "Lic. Martha Briseño V.",  role: "Coord. Región Noroeste",       initials: "MB", color: "var(--brand-pink)",     photo: marthaBriceno },
+  { name: "Martha Peralta",          role: "Dirección de Vinculación",     initials: "MP", color: "var(--brand-cyan)",     photo: null },
+  { name: "Eduardo Mejia",           role: "Backend Programmer",           initials: "EM", color: "var(--brand-skyblue)",  photo: null },
+  { name: "Guillermo",               role: "Director de Desarrollo",       initials: "G",  color: "var(--brand-amber)",    photo: null },
 ];
 
 const soporte = [
@@ -36,21 +41,35 @@ export function Equipo() {
         </div>
 
         {/* Directivos */}
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {members.map((m) => (
             <div
               key={m.name}
-              className="card-lift bg-card rounded-2xl p-6 border border-border shadow-sm flex items-start gap-4"
+              className="card-lift bg-card rounded-2xl border border-border shadow-sm overflow-hidden"
             >
+              {m.photo ? (
+                <div className="w-full h-64 bg-gray-100 flex items-center justify-center overflow-hidden">
+                  <img
+                    src={m.photo}
+                    alt={m.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ) : (
+                <div
+                  className="w-full h-64 flex items-center justify-center text-white font-black text-4xl"
+                  style={{ background: m.color }}
+                >
+                  {m.initials}
+                </div>
+              )}
               <div
-                className="shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-white font-black text-lg"
+                className="h-1"
                 style={{ background: m.color }}
-              >
-                {m.initials}
-              </div>
-              <div>
+              />
+              <div className="p-5">
                 <div className="text-base font-black text-ink">{m.name}</div>
-                <div className="text-sm font-semibold text-ink-soft">{m.role}</div>
+                <div className="text-sm font-semibold text-ink-soft mt-0.5">{m.role}</div>
               </div>
             </div>
           ))}
