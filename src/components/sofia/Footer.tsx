@@ -1,11 +1,11 @@
 import logo from "@/assets/sofia-logo.png";
-import aliConacyt   from "@/assets/aliados/conacyt.png";
-import aliUnete     from "@/assets/aliados/unete.png";
+import aliSecihti  from "@/assets/aliados/secihti.png";
+import aliUnete    from "@/assets/aliados/unete.png";
 import aliMicrosoft from "@/assets/aliados/microsoft.png";
 
 const aliados = [
-  { src: aliConacyt,   alt: "CONACYT" },
-  { src: aliUnete,     alt: "UNETE" },
+  { src: aliSecihti,  alt: "Secihti" },
+  { src: aliUnete,    alt: "UNETE" },
   { src: aliMicrosoft, alt: "Microsoft" },
 ];
 

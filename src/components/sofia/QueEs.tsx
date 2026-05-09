@@ -43,8 +43,8 @@ export function QueEs() {
             <p className="mt-6 text-lg text-ink-soft leading-relaxed">
               Sofía XT es un centro de investigación educativa que ofrece una plataforma
               virtual con herramientas para incrementar el nivel de aprendizaje de los
-              alumnos, alineada al programa de la SEP y enriquecida con contenidos
-              innovadores.
+              alumnos, alineada a planes de estudio nacional 2025 y enriquecida con
+              contenidos innovadores.
             </p>
           </div>
           <div className="relative">

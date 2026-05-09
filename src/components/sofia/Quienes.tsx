@@ -19,14 +19,18 @@ const cols = [
   },
 ];
 
+const FOUNDED = 2012;
+
 const milestones = [
-  { year: "2014", text: "Fundación de Sofía XT", color: "var(--brand-orange)" },
+  { year: "2012", text: "Fundación de Sofía XT", color: "var(--brand-orange)" },
   { year: "2017", text: "1,000 escuelas en México", color: "var(--brand-blue)" },
   { year: "2021", text: "Expansión a Latinoamérica", color: "var(--brand-green)" },
   { year: "2025", text: "+30M ejercicios resueltos", color: "var(--brand-pink)" },
 ];
 
 export function Quienes() {
+  const yearsActive = new Date().getFullYear() - FOUNDED;
+
   return (
     <section id="quienes" className="py-12 md:py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
@@ -57,10 +61,9 @@ export function Quienes() {
         {/* Timeline */}
         <div className="mt-20">
           <h3 className="text-center text-xl md:text-2xl font-black text-ink mb-10">
-            11 años de historia
+            {yearsActive} años de historia
           </h3>
           <div className="relative">
-            {/* Line sits at center of the dot (dot is 24px + ring 8px = 32px, center = 16px = top-4) */}
             <div className="hidden md:block absolute left-0 right-0 top-4 h-0.5 bg-border" />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {milestones.map((m) => (
