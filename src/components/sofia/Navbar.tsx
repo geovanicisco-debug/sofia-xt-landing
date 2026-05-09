@@ -139,7 +139,7 @@ export function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-4 md:px-8 h-16 md:h-20 flex items-center justify-between">
         <a href="#top" className="flex items-center gap-2 shrink-0">
-          <img src={logo} alt="Sofía XT" className="h-9 md:h-11 w-auto" />
+          <img src={logo} alt="Sofía XT" className="h-12 md:h-14 w-auto" />
         </a>
 
         <ul className="hidden lg:flex items-center gap-6 xl:gap-8">

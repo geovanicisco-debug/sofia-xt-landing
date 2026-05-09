@@ -2,6 +2,30 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 
+const COUNTRIES = [
+  { code: "+52",  flag: "🇲🇽", name: "México" },
+  { code: "+1",   flag: "🇺🇸", name: "EE.UU." },
+  { code: "+34",  flag: "🇪🇸", name: "España" },
+  { code: "+54",  flag: "🇦🇷", name: "Argentina" },
+  { code: "+591", flag: "🇧🇴", name: "Bolivia" },
+  { code: "+55",  flag: "🇧🇷", name: "Brasil" },
+  { code: "+56",  flag: "🇨🇱", name: "Chile" },
+  { code: "+57",  flag: "🇨🇴", name: "Colombia" },
+  { code: "+506", flag: "🇨🇷", name: "Costa Rica" },
+  { code: "+53",  flag: "🇨🇺", name: "Cuba" },
+  { code: "+593", flag: "🇪🇨", name: "Ecuador" },
+  { code: "+503", flag: "🇸🇻", name: "El Salvador" },
+  { code: "+502", flag: "🇬🇹", name: "Guatemala" },
+  { code: "+504", flag: "🇭🇳", name: "Honduras" },
+  { code: "+505", flag: "🇳🇮", name: "Nicaragua" },
+  { code: "+507", flag: "🇵🇦", name: "Panamá" },
+  { code: "+595", flag: "🇵🇾", name: "Paraguay" },
+  { code: "+51",  flag: "🇵🇪", name: "Perú" },
+  { code: "+1809",flag: "🇩🇴", name: "Rep. Dominicana" },
+  { code: "+598", flag: "🇺🇾", name: "Uruguay" },
+  { code: "+58",  flag: "🇻🇪", name: "Venezuela" },
+];
+
 const schema = z.object({
   nombre: z.string().trim().min(2, "Ingresa tu nombre").max(100),
   email: z.string().trim().email("Correo inválido").max(255),
@@ -26,6 +50,7 @@ export function Contacto() {
   const [niveles, setNiveles] = useState<string[]>([]);
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
+  const [countryCode, setCountryCode] = useState("+52");
 
   const toggleNivel = (n: string) =>
     setNiveles((p) => (p.includes(n) ? p.filter((x) => x !== n) : [...p, n]));
@@ -36,7 +61,7 @@ export function Contacto() {
     const data = {
       nombre: String(fd.get("nombre") || ""),
       email: String(fd.get("email") || ""),
-      telefono: String(fd.get("telefono") || ""),
+      telefono: `${countryCode} ${String(fd.get("telefono") || "")}`.trim(),
       institucion: String(fd.get("institucion") || ""),
       tipo: String(fd.get("tipo") || ""),
       niveles,
@@ -116,7 +141,25 @@ export function Contacto() {
             </div>
             <div>
               <label className="text-sm font-bold text-ink">Teléfono</label>
-              <input name="telefono" maxLength={20} className={`${inputBase} ${errCls("telefono")} mt-1.5`} placeholder="+52 ..." />
+              <div className={`flex mt-1.5 rounded-xl border overflow-hidden ${errCls("telefono")} bg-background`}>
+                <select
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  className="shrink-0 bg-surface border-r border-border px-2 py-3 text-sm text-ink focus:outline-none"
+                >
+                  {COUNTRIES.map((c) => (
+                    <option key={c.code + c.name} value={c.code}>
+                      {c.flag} {c.code}
+                    </option>
+                  ))}
+                </select>
+                <input
+                  name="telefono"
+                  maxLength={15}
+                  className="flex-1 bg-transparent px-3 py-3 text-sm text-ink placeholder:text-muted-foreground focus:outline-none"
+                  placeholder="000 000 0000"
+                />
+              </div>
               {errors.telefono && <p className="text-xs text-destructive mt-1">{errors.telefono}</p>}
             </div>
           </div>
