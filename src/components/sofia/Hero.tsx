@@ -16,7 +16,7 @@ export function Hero() {
         <div className="text-white">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/15 backdrop-blur px-4 py-1.5 text-xs font-bold uppercase tracking-wider">
             <span className="w-2 h-2 rounded-full bg-brand-green-soft" />
-            11 años transformando la educación
+            {new Date().getFullYear() - 2012} años transformando la educación
           </span>
           <h1 className="mt-6 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
             La plataforma educativa más popular de{" "}

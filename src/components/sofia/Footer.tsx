@@ -1,5 +1,5 @@
 import logo from "@/assets/sofia-logo.png";
-import aliSecihti  from "@/assets/aliados/secihti.png";
+import aliSecihti  from "@/assets/aliados/secihti-blanco.png";
 import aliUnete    from "@/assets/aliados/unete.png";
 import aliMicrosoft from "@/assets/aliados/microsoft.png";
 
