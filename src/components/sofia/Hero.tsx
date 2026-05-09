@@ -46,15 +46,13 @@ export function Hero() {
           <div className="absolute -inset-6 bg-white/10 blur-3xl rounded-full" />
           <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-video">
             <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/qPE0qPmyXfU?si=IVOWniRrpWcCIIrd"
+              src="https://www.youtube.com/embed/qPE0qPmyXfU?si=IVOWniRrpWcCIIrd&vq=hd1080"
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              className="w-full h-full"
+              className="absolute inset-0 w-full h-full"
             />
           </div>
         </div>
