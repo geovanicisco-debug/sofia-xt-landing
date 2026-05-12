@@ -1,3 +1,7 @@
+import lasalleMexicoNorte from "@/assets/alianzas/lasalle-mexico-norte.png";
+import cnepAlianza from "@/assets/alianzas/cnep.png";
+import annepi from "@/assets/alianzas/annepi.png";
+
 import activaIntegral from "@/assets/escuelas/activa-integral.jpg";
 import alerce from "@/assets/escuelas/alerce.jpg";
 import alfa from "@/assets/escuelas/alfa.jpg";
@@ -120,6 +124,12 @@ function Row({
   );
 }
 
+const alianzas = [
+  { src: lasalleMexicoNorte, alt: "La Salle México Norte" },
+  { src: cnepAlianza,        alt: "CNEP" },
+  { src: annepi,             alt: "Annepi" },
+];
+
 export function Clientes() {
   return (
     <section id="clientes" className="py-12 md:py-14 bg-background border-y border-border">
@@ -129,12 +139,34 @@ export function Clientes() {
         </span>
         <h2 className="mt-3 text-3xl md:text-4xl lg:text-5xl font-black text-ink">
           +40 Escuelas que han confiado en nosotros
+          <span className="block mt-2 text-2xl md:text-3xl font-bold text-brand-teal">
+            y alianzas que nos respaldan
+          </span>
         </h2>
       </div>
 
       <div className="space-y-5">
         <Row items={row1} speed="marquee" />
         <Row items={row2} speed="marquee-slow" reverse />
+      </div>
+
+      {/* Alianzas */}
+      <div className="max-w-7xl mx-auto px-4 md:px-8 mt-14">
+        <h3 className="text-center text-xl font-black text-ink mb-8">Nuestras Alianzas</h3>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-14">
+          {alianzas.map((a) => (
+            <div
+              key={a.alt}
+              className="w-44 h-24 bg-white rounded-xl shadow-sm border border-border flex items-center justify-center px-4 py-3"
+            >
+              <img
+                src={a.src}
+                alt={a.alt}
+                className="max-w-full max-h-full w-auto h-auto object-contain"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
