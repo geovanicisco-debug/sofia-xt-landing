@@ -1,8 +1,5 @@
 import { useState } from "react";
 
-const TABS = ["Licencias", "Preparación y Entrenamiento"] as const;
-type Tab = typeof TABS[number];
-
 const licencias = [
   {
     icon: "🌱",
@@ -54,29 +51,106 @@ const preparacion = [
   {
     icon: "🎓",
     title: "Preparación Prepa",
-    desc: "Módulo especial que prepara a los alumnos para ingresar exitosamente a preparatoria.",
+    subtitle: "Nivel Secundaria",
     color: "var(--brand-teal)",
+    items: [
+      "Módulo especial para ingresar exitosamente a preparatoria",
+      "Práctica enfocada en los temas del examen de admisión",
+    ],
   },
   {
     icon: "🏛️",
     title: "Entrenamiento Tec de Monterrey",
-    desc: "Practica y refuerza los conocimientos necesarios para el examen de admisión del Tecnológico de Monterrey.",
+    subtitle: "Nivel Preparatoria",
     color: "var(--brand-green)",
+    items: [
+      "Refuerzo de conocimientos para el examen de admisión del Tecnológico de Monterrey",
+      "Ejercicios alineados al formato y nivel de dificultad del examen",
+    ],
   },
   {
     icon: "📖",
     title: "Programa NEM",
-    desc: "Contenido alineado al programa Nueva Escuela Mexicana (NEM) para todos los niveles.",
+    subtitle: "Todos los niveles",
     color: "var(--brand-orange)",
+    items: [
+      "Contenido alineado al programa Nueva Escuela Mexicana (NEM)",
+      "Smartbooks adaptados al currículo NEM/MCC vigente",
+    ],
   },
 ];
 
+const SECTIONS = [
+  { key: "licencias", label: "Licencias", items: licencias },
+  { key: "preparacion", label: "Preparación y Entrenamiento", items: preparacion },
+] as const;
+
+function Accordion({ items }: { items: typeof licencias }) {
+  const [open, setOpen] = useState<number | null>(0);
+
+  return (
+    <div className="mt-8 space-y-3">
+      {items.map((item, i) => {
+        const isOpen = open === i;
+        return (
+          <div
+            key={item.title}
+            className="rounded-2xl border border-border bg-card shadow-sm overflow-hidden"
+          >
+            <button
+              onClick={() => setOpen(isOpen ? null : i)}
+              className="w-full flex items-center gap-4 px-6 py-4 text-left hover:bg-surface transition-colors"
+            >
+              <div
+                className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-xl text-white"
+                style={{ background: item.color }}
+              >
+                {item.icon}
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="font-black text-ink text-base">{item.title}</div>
+                <div className="text-xs text-ink-soft font-semibold">{item.subtitle}</div>
+              </div>
+              <svg
+                width="20" height="20" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                className={`shrink-0 text-ink-soft transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+
+            {isOpen && (
+              <div className="px-6 pb-5 pt-1 border-t border-border">
+                <ul className="space-y-2.5 mt-3">
+                  {item.items.map((feat) => (
+                    <li key={feat} className="flex items-start gap-3 text-sm text-ink-soft">
+                      <span
+                        className="mt-0.5 shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-white text-[11px] font-black"
+                        style={{ background: item.color }}
+                      >
+                        ✓
+                      </span>
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 export function Novedades() {
-  const [active, setActive] = useState<Tab>("Licencias");
+  const [activeSection, setActiveSection] = useState<"licencias" | "preparacion">("licencias");
+  const current = SECTIONS.find((s) => s.key === activeSection)!;
 
   return (
     <section id="novedades" className="py-12 md:py-16 bg-background">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+      <div className="max-w-4xl mx-auto px-4 md:px-8">
         <div className="text-center max-w-2xl mx-auto">
           <span className="inline-block text-xs font-bold uppercase tracking-wider text-brand-pink">
             Soluciones Educativas
@@ -89,66 +163,24 @@ export function Novedades() {
           </p>
         </div>
 
-        {/* Tabs */}
+        {/* Section tabs */}
         <div className="mt-10 flex justify-center gap-3 flex-wrap">
-          {TABS.map((t) => (
+          {SECTIONS.map((s) => (
             <button
-              key={t}
-              onClick={() => setActive(t)}
+              key={s.key}
+              onClick={() => setActiveSection(s.key)}
               className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all border ${
-                active === t
+                activeSection === s.key
                   ? "bg-brand-pink text-white border-brand-pink shadow-lg scale-105"
                   : "bg-card text-ink-soft border-border hover:bg-surface"
               }`}
             >
-              {t}
+              {s.label}
             </button>
           ))}
         </div>
 
-        {/* Licencias */}
-        {active === "Licencias" && (
-          <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {licencias.map((l) => (
-              <div
-                key={l.title}
-                className="card-lift rounded-2xl border border-border bg-card shadow-sm overflow-hidden flex flex-col"
-              >
-                <div className="p-6 text-white flex flex-col gap-2" style={{ background: l.color }}>
-                  <div className="text-3xl">{l.icon}</div>
-                  <h3 className="text-xl font-black leading-snug">{l.title}</h3>
-                  <p className="text-xs font-semibold text-white/80">{l.subtitle}</p>
-                </div>
-                <ul className="p-5 space-y-2 flex-1">
-                  {l.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-ink-soft">
-                      <span className="mt-0.5 shrink-0 w-4 h-4 rounded-full flex items-center justify-center text-white text-[10px] font-black" style={{ background: l.color }}>✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* Preparación y Entrenamiento */}
-        {active === "Preparación y Entrenamiento" && (
-          <div className="mt-10 grid sm:grid-cols-3 gap-5">
-            {preparacion.map((p) => (
-              <div
-                key={p.title}
-                className="card-lift rounded-2xl p-7 text-white relative overflow-hidden shadow-md"
-                style={{ background: p.color }}
-              >
-                <div className="absolute -bottom-5 -right-5 w-24 h-24 rounded-full bg-white/15 pointer-events-none" />
-                <div className="text-4xl mb-3">{p.icon}</div>
-                <h3 className="text-xl font-black">{p.title}</h3>
-                <p className="mt-2 text-sm text-white/85 leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        )}
+        <Accordion items={current.items as typeof licencias} />
       </div>
     </section>
   );

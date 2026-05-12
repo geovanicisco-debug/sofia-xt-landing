@@ -157,7 +157,7 @@ export function Clientes() {
           {alianzas.map((a) => (
             <div
               key={a.alt}
-              className="w-44 h-24 bg-white rounded-xl shadow-sm border border-border flex items-center justify-center px-4 py-3"
+              className="w-64 h-36 bg-white rounded-2xl shadow-md border border-border flex items-center justify-center px-6 py-4"
             >
               <img
                 src={a.src}
