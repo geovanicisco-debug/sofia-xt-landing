@@ -2,19 +2,19 @@ const cols = [
   {
     icon: "🎯",
     title: "Misión",
-    desc: "Brindar herramientas tecnológicas que potencien el aprendizaje significativo de cada alumno en México y Latinoamérica.",
+    desc: "Cultivar en cada estudiante una serenidad interior desde la cual pueda entrar en ese estado de fluidez donde la mente se vuelve ligera, lúcida y creativa. Desde esa armonía profunda —no desde la presión— acompañarles a desplegar su máximo potencial y a forjar un carácter que actúe con propósito, alegría y dignidad en el mundo.",
     color: "var(--brand-blue)",
   },
   {
     icon: "🌟",
     title: "Visión",
-    desc: "Ser la plataforma educativa de referencia, reconocida por su impacto en el desempeño académico y la innovación pedagógica.",
+    desc: "Construir el ecosistema educativo más fuerte y querido del país, elegido por escuelas, docentes y familias por su impacto humano y profundo en la formación de nuestros niños, niñas y jóvenes.",
     color: "var(--brand-green)",
   },
   {
     icon: "🚀",
-    title: "Objetivo General",
-    desc: "Incrementar el nivel de aprendizaje a través de contenidos alineados al currículum oficial y experiencias adaptativas.",
+    title: "Objetivo 2030",
+    desc: "Construir la comunidad educativa más grande de México con 2 millones de estudiantes, articulada con organizaciones escolares, empresariales, gobiernos de 27 estados y el magisterio, para convertirse en la red formativa más sólida, apreciada y transformadora del país.",
     color: "var(--brand-skyblue)",
   },
 ];
