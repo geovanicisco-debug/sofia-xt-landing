@@ -91,16 +91,20 @@ export function Quienes() {
                   {m.future ? (
                     <>
                       <div className="relative z-10 mb-4">
+                        {/* Meta badge floating above the line */}
+                        <span
+                          className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs font-black uppercase tracking-wider px-2 py-0.5 rounded-full"
+                          style={{ background: "#ede9fe", color: "#7c3aed" }}
+                        >
+                          Meta
+                        </span>
                         <div
-                          className="w-8 h-8 rounded-full border-2 border-dashed flex items-center justify-center text-sm"
+                          className="w-6 h-6 rounded-full border-2 border-dashed flex items-center justify-center text-xs ring-4 ring-background"
                           style={{ borderColor: "#8b5cf6", background: "#ede9fe" }}
                         >
                           🎯
                         </div>
                       </div>
-                      <span className="text-xs font-black uppercase tracking-wider px-2 py-0.5 rounded-full mb-1" style={{ background: "#ede9fe", color: "#7c3aed" }}>
-                        Meta
-                      </span>
                       <div className="text-2xl font-black" style={{ color: "#7c3aed" }}>{m.year}</div>
                       <div className="mt-1 text-sm max-w-[160px] font-medium" style={{ color: "#8b5cf6" }}>{m.text}</div>
                     </>
