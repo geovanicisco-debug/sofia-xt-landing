@@ -22,10 +22,16 @@ const cols = [
 const FOUNDED = 2012;
 
 const milestones = [
-  { year: "2012", text: "Fundación de Sofía XT", color: "var(--brand-orange)" },
-  { year: "2017", text: "1,000 escuelas en México", color: "var(--brand-blue)" },
-  { year: "2021", text: "Expansión a Latinoamérica", color: "var(--brand-green)" },
-  { year: "2025", text: "+30M ejercicios resueltos", color: "var(--brand-pink)" },
+  { year: "2012", text: "Fundación de Sofía XT", color: "var(--brand-orange)", future: false },
+  { year: "2017", text: "1,000 escuelas en México", color: "var(--brand-blue)", future: false },
+  { year: "2021", text: "Expansión a Latinoamérica", color: "var(--brand-green)", future: false },
+  { year: "2025", text: "+30M ejercicios resueltos", color: "var(--brand-pink)", future: false },
+  {
+    year: "2030",
+    text: "2 millones de estudiantes · 27 estados · la red formativa más grande de México",
+    color: "var(--brand-amber)",
+    future: true,
+  },
 ];
 
 export function Quienes() {
@@ -60,20 +66,54 @@ export function Quienes() {
 
         {/* Timeline */}
         <div className="mt-20">
-          <h3 className="text-center text-xl md:text-2xl font-black text-ink mb-10">
-            {yearsActive} años de historia
-          </h3>
+          <div className="text-center mb-10">
+            <h3 className="text-xl md:text-2xl font-black text-ink">
+              {yearsActive} años construyendo historia
+            </h3>
+            <p className="mt-1 text-base font-semibold" style={{ color: "var(--brand-green)" }}>
+              y seguimos construyendo
+            </p>
+          </div>
           <div className="relative">
-            <div className="hidden md:block absolute left-0 right-0 top-4 h-0.5 bg-border" />
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {/* Solid line for past milestones (first 4 of 5 = 80%) */}
+            <div className="hidden md:block absolute left-0 top-4 h-0.5 bg-border" style={{ right: "20%" }} />
+            {/* Dashed line for future segment (last 20%) */}
+            <div
+              className="hidden md:block absolute top-4 h-0.5"
+              style={{
+                left: "80%", right: 0,
+                background: "repeating-linear-gradient(90deg, #9ca3af 0, #9ca3af 6px, transparent 6px, transparent 14px)",
+              }}
+            />
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
               {milestones.map((m) => (
                 <div key={m.year} className="relative flex flex-col items-center text-center">
-                  <div
-                    className="w-6 h-6 rounded-full ring-4 ring-background z-10 mb-4"
-                    style={{ background: m.color }}
-                  />
-                  <div className="text-2xl font-black text-ink">{m.year}</div>
-                  <div className="mt-1 text-sm text-ink-soft max-w-[180px]">{m.text}</div>
+                  {m.future ? (
+                    <>
+                      <div className="relative z-10 mb-4">
+                        <div
+                          className="w-8 h-8 rounded-full border-2 border-dashed flex items-center justify-center text-sm"
+                          style={{ borderColor: "#8b5cf6", background: "#ede9fe" }}
+                        >
+                          🎯
+                        </div>
+                      </div>
+                      <span className="text-xs font-black uppercase tracking-wider px-2 py-0.5 rounded-full mb-1" style={{ background: "#ede9fe", color: "#7c3aed" }}>
+                        Meta
+                      </span>
+                      <div className="text-2xl font-black" style={{ color: "#7c3aed" }}>{m.year}</div>
+                      <div className="mt-1 text-sm max-w-[160px] font-medium" style={{ color: "#8b5cf6" }}>{m.text}</div>
+                    </>
+                  ) : (
+                    <>
+                      <div
+                        className="w-6 h-6 rounded-full ring-4 ring-background z-10 mb-4"
+                        style={{ background: m.color }}
+                      />
+                      <div className="text-2xl font-black text-ink">{m.year}</div>
+                      <div className="mt-1 text-sm text-ink-soft max-w-[160px]">{m.text}</div>
+                    </>
+                  )}
                 </div>
               ))}
             </div>
