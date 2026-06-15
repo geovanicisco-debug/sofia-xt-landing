@@ -1,17 +1,13 @@
-import dinoPardo      from "@/assets/team/dino-pardo.jpg";
-import cristinaSob    from "@/assets/team/cristina-soberanes.jpg";
-import marthaBriceno  from "@/assets/team/martha-briceno.jpg";
-import maviraDuran    from "@/assets/team/mavira-duran.jpg";
+import dinoPardo      from "@/assets/team/dino-pardo-photoroom.png";
+import cristinaSob    from "@/assets/team/cristina-soberanes-photoroom.png";
+import marthaBriceno  from "@/assets/team/martha-briceno-photoroom.png";
+import maviraDuran    from "@/assets/team/mavira-duran-photoroom.png";
 
 const members = [
   { name: "Dr. Dino A. Pardo",       role: "Dirección General",            initials: "DP", color: "var(--brand-blue)",     photo: dinoPardo },
   { name: "Lic. Cristina Soberanes", role: "Dirección",                    initials: "CS", color: "var(--brand-green)",    photo: cristinaSob },
-  { name: "María Laura Lugo",        role: "Coordinación",                 initials: "ML", color: "var(--brand-teal)",     photo: null },
   { name: "Lic. Mavira Durán P.",    role: "Dirección",                    initials: "MD", color: "var(--brand-orange)",   photo: maviraDuran },
   { name: "Lic. Martha Briseño V.",  role: "Coord. Región Noroeste",       initials: "MB", color: "var(--brand-pink)",     photo: marthaBriceno },
-  { name: "Martha Peralta",          role: "Dirección de Vinculación",     initials: "MP", color: "var(--brand-cyan)",     photo: null },
-  { name: "Eduardo Mejia",           role: "Backend Programmer",           initials: "EM", color: "var(--brand-skyblue)",  photo: null },
-  { name: "Guillermo",               role: "Director de Desarrollo",       initials: "G",  color: "var(--brand-amber)",    photo: null },
 ];
 
 const soporte = [
